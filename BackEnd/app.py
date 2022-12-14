@@ -19,3 +19,8 @@ def hello_world():
 @cross_origin()
 def uitdedb():
     return eigenbestand.ganaardedb()
+
+@app.route("/naardecsv")
+@cross_origin()
+def naardecsv():
+    return eigenbestand.eencsvuitlezen()

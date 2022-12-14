@@ -1,6 +1,7 @@
 #import mysql.connector  # deprectated
 import mariadb
 import json
+import pandas
 
 def ganaardedb():
     mydb = mariadb.connect(
@@ -22,3 +23,10 @@ def ganaardedb():
     return json.dumps(mijnlijst)
 
 #print(ganaardedb())
+
+def eencsvuitlezen():
+    pokemons = pandas.read_csv("Pokemon.csv")
+    print(pokemons)
+    return pokemons.to_json(orient="table")
+
+#eencsvuitlezen()
