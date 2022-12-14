@@ -21,4 +21,4 @@ def ganaardedb():
 
     return json.dumps(mijnlijst)
 
-print(ganaardedb())
+#print(ganaardedb())

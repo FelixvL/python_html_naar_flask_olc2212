@@ -1,6 +1,14 @@
 <script>
     function gagegevensophalen(){
-        console.log("go");
+        fetch('http://localhost:5000/uitdedb')
+        .then( r => r.json() )
+        .then(d => toonDeAutos(d) )
+    }
+    function toonDeAutos(lijstautos){
+        for(var x =0; x < lijstautos.length; x++){
+            console.log(lijstautos[x]);
+            document.getElementById("tabel").innerHTML += "<br> - "+lijstautos[x];
+        }
     }
 
 </script>
@@ -12,3 +20,6 @@
 <button>Klik hier (toevoegen)</button>
 <br><br>
 <button onclick="gagegevensophalen()">Ophalen gegevens</button>
+<div id="tabel">
+
+</div>
